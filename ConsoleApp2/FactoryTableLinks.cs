@@ -45,6 +45,7 @@ namespace ConsoleApp2
             input = input.Replace("dbo.", "");
             input = input.Replace("[", "");
             input = input.Replace("]", "");
+            input = input.Replace("\"", "");
 
             List<string> tableNames = new List<string>();
             var listTableName = new List<DataTableOrigin>();
