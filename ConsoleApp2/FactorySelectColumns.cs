@@ -64,6 +64,8 @@ namespace ConsoleApp2
             Console.WriteLine("----------------------------------Start System_SP_SelectColumns-------------------------------------");
             foreach (var item in listColumns)
             {
+                if (item.AliasColumn.ToLower() == "id")
+                    item.AliasColumn = item.AliasColumn.ToUpper();
                 Console.WriteLine($"INSERT INTO[dbo].[System_SP_SelectColumns] ([SPCode], [TableName], [ColumnName], [ColumnAlias])");
                 Console.WriteLine($"VALUES('{SpCode}', '{item.TableLinks}', '{item.OriginColumn}', '{item.AliasColumn}')");
                 Console.WriteLine();
