@@ -365,7 +365,7 @@ namespace ConsoleApp2
         public static void GenerateSelectColumns(string input, List<DataTableOrigin> dataTableOrigins, Dictionary<string, DataTableLink> dataReturn, string entity)
         {
             var listColumns = new List<SelectColumnEntity>();
-            input = input.Replace("\"", "");
+            input = input.Replace("\"\"", " ");
             input = input.Replace(" AS ", " as ");
 
             string[] statements = input.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
